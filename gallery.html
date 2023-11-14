@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kev's Web</title>
+    <link rel="icon" type="x-icon" href="Random.jfif">
+    <link rel="stylesheet" href="STYLE.css">
+</head>
+
+<body>
+    <header>
+        <h1>Kevin's Gallery</h1>
+        <img src="4c1ae876-4113-44ef-9ead-4fe81d60d797.jfif" alt="Image Description" width="150px" height="150px">
+    </header>
+
+    <nav>
+        <a href="website_template.html">Home</a>
+        <a href="Profle/Profile.html">About</a>
+        <a href="Forms.html">Contact</a>
+        <a href="gallery.html">Gallery</a>
+    </nav>
+
+    <main>
+        <div class="slideshow-container">
+            <div class="mySlides">
+                <div class="numbertext">1 / 6</div>
+                <img class="slideshow-img" src="image1.jpeg">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">2 / 6</div>
+                <img class="slideshow-img" src="image2.jpeg">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">3 / 6</div>
+                <img class="slideshow-img" src="image3.jpeg">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">4 / 6</div>
+                <img class="slideshow-img" src="image4.jpeg">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">5 / 6</div>
+                <img class="slideshow-img" src="image5.jpeg">
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
+        </div>
+
+        <br>
+
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
+        </div>
+
+        <BR><BR><BR><BR>
+
+
+    </main>
+
+    <footer>
+        <p>Fino Señores.</p>
+    </footer>
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+
+            if (n > slides.length) {
+                slideIndex = 5
+            }
+
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "all";
+            }
+
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+    </script>
+
+</body>
+
+</html>
